@@ -1,0 +1,14 @@
+- hosts: minecraft
+  remote_user: nanodano
+
+  tasks:
+  - name: SSH connect
+    ping:
+
+  - name: Check free memory
+    shell: free -h | grep "Mem:" | awk '{print $4" free"}'
+    register: free
+
+  - name: Output free memory
+    debug: msg={{free.stdout.split('\n')}}
+

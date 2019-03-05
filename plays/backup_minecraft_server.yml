@@ -1,0 +1,17 @@
+- hosts: minecraft
+  vars:
+    backup_filepath: /opt/minecraft_backups/ansible_mc_backup.tar
+  remote_user: nanodano
+
+  tasks:
+  - name: Archive minecraft server folder
+    shell: tar cf {{ backup_filepath }} /opt/minecraft/*
+
+  #- name: Remove existing gzip file if it exists
+
+  #- name: Gzipping archive `` yes | gzip ``
+
+  - name: Pull down the backup file
+    fetch:
+      src: "{{backup_filepath}}"
+      dest: .
