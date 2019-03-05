@@ -31,4 +31,5 @@ Run playbook::
 References
 ----------
 
-- https://docs.ansible.com/
+- Ansible documentation: https://docs.ansible.com/
+- Live Coding of building this code repo: https://www.youtube.com/watch?v=LFnaw2_wn5s
